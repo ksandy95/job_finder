@@ -6,7 +6,6 @@ RSpec.describe 'Indeed Service' do
     it "can connect without error" do
       service = IndeedService.new
       response = service.get_connection
-
       expect(response).to be_a Hash
     end
 
