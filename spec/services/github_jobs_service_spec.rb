@@ -6,8 +6,9 @@ RSpec.describe 'Github Jobs Service' do
     it "can connect without error" do
       service = GithubJobsService.new
       response = service.get_connection
-
-      expect(response).to be_a Hash
+      body = response.body
+      json = JSON.parse(body, symbolize_names: true)
+      expect(json.first).to be_a Hash
     end
 
   end
